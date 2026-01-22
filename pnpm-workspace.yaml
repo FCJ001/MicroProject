@@ -1,0 +1,5 @@
+packages:
+  - 'main-app'
+  - 'meeting-room-app'
+  - 'exam-app'
+  - 'chat-app'

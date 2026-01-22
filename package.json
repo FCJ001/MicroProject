@@ -1,0 +1,28 @@
+{
+  "name": "micro-app-project",
+  "version": "1.0.0",
+  "description": "基于 Micro-app 的微前端项目",
+  "private": true,
+  "workspaces": [
+    "main-app",
+    "meeting-room-app",
+    "exam-app",
+    "chat-app"
+  ],
+  "scripts": {
+    "install:all": "pnpm install",
+    "dev:main": "cd main-app && pnpm dev",
+    "dev:meeting": "cd meeting-room-app && pnpm dev",
+    "dev:exam": "cd exam-app && pnpm dev",
+    "dev:chat": "cd chat-app && pnpm dev",
+    "dev": "concurrently \"pnpm run dev:main\" \"pnpm run dev:meeting\" \"pnpm run dev:exam\" \"pnpm run dev:chat\"",
+    "build:main": "cd main-app && pnpm build",
+    "build:meeting": "cd meeting-room-app && pnpm build",
+    "build:exam": "cd exam-app && pnpm build",
+    "build:chat": "cd chat-app && pnpm build",
+    "build": "pnpm run build:meeting && pnpm run build:exam && pnpm run build:chat && pnpm run build:main"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
