@@ -20,9 +20,31 @@
     "build:meeting": "cd meeting-room-app && pnpm build",
     "build:exam": "cd exam-app && pnpm build",
     "build:chat": "cd chat-app && pnpm build",
-    "build": "pnpm run build:meeting && pnpm run build:exam && pnpm run build:chat && pnpm run build:main"
+    "build": "pnpm run build:meeting && pnpm run build:exam && pnpm run build:chat && pnpm run build:main",
+    "prepare": "husky",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md,html}": [
+      "prettier --write"
+    ]
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.26",
+    "globals": "^17.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.8.1",
+    "typescript-eslint": "^8.53.1"
   }
 }

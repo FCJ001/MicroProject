@@ -51,6 +51,7 @@
 ### 主应用配置
 
 **main-app/src/main.jsx**
+
 ```javascript
 import microApp from '@micro-zoe/micro-app'
 
@@ -59,27 +60,25 @@ microApp.start()
 ```
 
 **main-app/src/App.jsx**
+
 ```jsx
-<micro-app
-  name="meeting-room"
-  url="http://localhost:5174"
-  baseroute="/meeting-room"
-></micro-app>
+<micro-app name="meeting-room" url="http://localhost:5174" baseroute="/meeting-room"></micro-app>
 ```
 
 ### 子应用配置
 
 **子应用 vite.config.js**
+
 ```javascript
 export default defineConfig({
   server: {
-    port: 5174,  // 每个子应用独立端口
+    port: 5174, // 每个子应用独立端口
     cors: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
   },
-  base: '/meeting-room/',  // 配置 base 路径
+  base: '/meeting-room/', // 配置 base 路径
 })
 ```
 

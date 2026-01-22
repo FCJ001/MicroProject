@@ -4,35 +4,26 @@ import './App.css'
 // 导航组件
 function Nav() {
   const location = useLocation()
-  
+
   return (
     <nav className="nav">
       <div className="nav-brand">
         <h1>微前端主应用</h1>
       </div>
       <div className="nav-links">
-        <Link 
-          to="/" 
-          className={location.pathname === '/' ? 'active' : ''}
-        >
+        <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
           首页
         </Link>
-        <Link 
-          to="/meeting-room" 
+        <Link
+          to="/meeting-room"
           className={location.pathname.startsWith('/meeting-room') ? 'active' : ''}
         >
           会议室预定
         </Link>
-        <Link 
-          to="/exam" 
-          className={location.pathname.startsWith('/exam') ? 'active' : ''}
-        >
+        <Link to="/exam" className={location.pathname.startsWith('/exam') ? 'active' : ''}>
           考试系统
         </Link>
-        <Link 
-          to="/chat" 
-          className={location.pathname.startsWith('/chat') ? 'active' : ''}
-        >
+        <Link to="/chat" className={location.pathname.startsWith('/chat') ? 'active' : ''}>
           聊天室
         </Link>
       </div>
@@ -50,17 +41,23 @@ function Home() {
         <div className="card">
           <h3>🏢 会议室预定系统</h3>
           <p>管理和预定会议室资源</p>
-          <Link to="/meeting-room" className="card-link">进入系统 →</Link>
+          <Link to="/meeting-room" className="card-link">
+            进入系统 →
+          </Link>
         </div>
         <div className="card">
           <h3>📝 考试系统</h3>
           <p>在线考试和答题系统</p>
-          <Link to="/exam" className="card-link">进入系统 →</Link>
+          <Link to="/exam" className="card-link">
+            进入系统 →
+          </Link>
         </div>
         <div className="card">
           <h3>💬 聊天室</h3>
           <p>实时聊天和消息系统</p>
-          <Link to="/chat" className="card-link">进入系统 →</Link>
+          <Link to="/chat" className="card-link">
+            进入系统 →
+          </Link>
         </div>
       </div>
     </div>
@@ -84,11 +81,7 @@ function MeetingRoomContainer() {
 function ExamContainer() {
   return (
     <div className="page">
-      <micro-app
-        name="exam"
-        url="http://localhost:5175"
-        baseroute="/exam"
-      ></micro-app>
+      <micro-app name="exam" url="http://localhost:5175" baseroute="/exam"></micro-app>
     </div>
   )
 }
@@ -97,11 +90,7 @@ function ExamContainer() {
 function ChatContainer() {
   return (
     <div className="page">
-      <micro-app
-        name="chat"
-        url="http://localhost:5176"
-        baseroute="/chat"
-      ></micro-app>
+      <micro-app name="chat" url="http://localhost:5176" baseroute="/chat"></micro-app>
     </div>
   )
 }

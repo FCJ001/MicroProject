@@ -5,7 +5,7 @@ declare namespace JSX {
         name?: string
         url?: string
         baseroute?: string
-        data?: any
+        data?: Record<string, unknown>
         onDataChange?: (e: CustomEvent) => void
       },
       HTMLElement

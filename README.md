@@ -22,14 +22,17 @@ MIrcoProject/
 本项目主要展示 Micro-app 微前端架构，三个子应用仅作为架构演示，只显示项目名称。
 
 ### 🏢 会议室预定系统 (meeting-room-app)
+
 - 端口: 5174
 - 仅显示项目名称，用于演示 micro-app 加载
 
 ### 📝 考试系统 (exam-app)
+
 - 端口: 5175
 - 仅显示项目名称，用于演示 micro-app 加载
 
 ### 💬 聊天室 (chat-app)
+
 - 端口: 5176
 - 仅显示项目名称，用于演示 micro-app 加载
 
@@ -41,6 +44,7 @@ MIrcoProject/
 - pnpm >= 8
 
 如果未安装 pnpm：
+
 ```bash
 npm install -g pnpm
 ```
@@ -52,6 +56,7 @@ pnpm install
 ```
 
 或使用脚本：
+
 ```bash
 pnpm run install:all
 ```
@@ -105,6 +110,7 @@ pnpm run build:chat
 ### 主应用（main-app）
 
 主应用作为微前端的基座，负责：
+
 - 加载和渲染子应用
 - 管理子应用的路由
 - 统一的导航和布局
@@ -112,6 +118,7 @@ pnpm run build:chat
 ### 子应用
 
 每个子应用都是独立的微前端模块：
+
 - 可以独立开发和部署
 - 通过 micro-app 组件在主应用中运行
 - 样式和 JavaScript 隔离
