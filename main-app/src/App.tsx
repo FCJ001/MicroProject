@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
-import './App.css'
+import './App.less'
 
 // 导航组件
 function Nav() {
