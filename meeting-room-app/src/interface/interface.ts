@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { RegisterUser } from '../page/register/Register'
 
 const axiosInstance = axios.create({
   baseURL: 'http://localhost:3000/',
@@ -20,3 +21,15 @@ axiosInstance.interceptors.response.use(
     return error.response
   },
 )
+
+export async function registerCaptcha(email: string) {
+  return await axiosInstance.get('/email/register-captcha', {
+    params: {
+      address: email,
+    },
+  })
+}
+
+export async function register(registerUser: RegisterUser) {
+  return await axiosInstance.post('/user/register', registerUser)
+}
